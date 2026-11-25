@@ -1,0 +1,241 @@
+
+.custom-navbar {
+  position: fixed ;
+  top: 30px;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+
+  min-width: 1000px;
+  min-height: 50px;
+  max-height: 100px;
+
+  padding: 22px 32px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  border-radius: 999px;
+  box-shadow: 9px 10px 25px 10px rgba(101, 200, 79, 0.374);
+
+  background-color: #ecf0ea52;
+  backdrop-filter: blur(30px) saturate(150%);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+}
+
+.hamburger-btn{
+  display: none;
+}
+
+/* Logo */
+.navbar-brand-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: -1.2px;
+  white-space: nowrap;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Rounded navigation container */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  padding: 2px;
+  border-radius: 20px;
+
+  background: rgba(245, 249, 245, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0px 4px 15px rgba(118, 223, 94, 0.537);
+}
+
+/* Navigation links */
+.nav-link-custom,
+.nav-cta {
+  min-height: 56px;
+  padding: 0 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-link-custom {
+  color: #293737;
+}
+
+.nav-link-custom:hover {
+  color: #557b67;
+}
+
+/* Dark call-to-action */
+.nav-cta {
+  border-radius: inherit;
+  background: #243234;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.nav-cta:hover {
+  background: #344746;
+  color: #fff;
+}
+
+
+/* Responsive design */
+@media (max-width: 650px) {
+
+  .custom-navbar {
+    width: calc(100% - 90px);
+    max-width: 800px;
+    min-width: 0;
+    padding: 12px 16px;
+    margin: 20px auto;
+
+    display: flex;
+    flex-wrap: wrap;  
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    
+    max-height: none;
+    overflow: visible;
+  }
+
+  .navbar-brand-custom {
+    font-size: 20px;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Hamburger button */
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 1;
+
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    border: 1px solid rgba(17, 15, 15, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #6e6b6b92;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* Hide menu by default */
+  .nav-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  order: 2;
+  flex: 0 0 100%;
+
+  width: 100%;
+  max-height: 0;
+  padding: 0 12px;
+  margin-top: 0;
+
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-10px);
+
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    padding 0.3s ease,
+    margin 0.3s ease;
+  }
+
+  /* Show menu when opened */
+  .custom-navbar .nav-pill.is-open {
+  max-height: 400px;
+  padding: 12px;
+  margin-top: 5px;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
+  border-radius: 14px;
+  }
+
+  /* Navigation links */
+  .nav-link-custom,
+  .nav-cta {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .custom-navbar {
+    width: calc(100% - 50px);
+    min-width: 0;
+    padding: 18px 12px;
+    gap: 8px;
+    margin: 10px auto;
+  }
+
+  .navbar-brand-custom {
+    font-size: 20px;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-link-custom,
+  .nav-cta {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}
