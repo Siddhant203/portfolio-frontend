@@ -9,10 +9,15 @@ import carRentalImg from "./assets/car-rental.png";
 import idCardImg from "./assets/Id_Card.png";
 import portfolioImg from "./assets/portfolio.png";
 import myResume from "./assets/resume.pdf";
-import { useState } from "react";
+import { useState, useEffecct } from "react";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function App() {
+
+  useEffecct(() =>{
+    fetch(`${API_BASE_URL}/api/projects`).catch(()=>{});
+  });
+
   const [status, setStatus] = useState({
     type: "",
     message: "",
